@@ -1,6 +1,6 @@
 import { writeFile } from 'fs';
 
-const targetPath = './src/app/environments/environment.prod.ts';
+const targetPath = './src/environments/environment.prod.ts';
 
 const envConfigFile = `export const environment = {
    production: true,
@@ -12,6 +12,7 @@ const envConfigFile = `export const environment = {
 
 writeFile(targetPath, envConfigFile, 'utf8', (err) => {
   if (err) {
-    return console.log(err);
+    console.error(err);
+    process.exit(1);
   }
 });
