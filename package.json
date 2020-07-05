@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "config": "ts-node -O '{\"module\": \"commonjs\"}' ./config.index.ts",
     "build": "npm run config && ng build --prod --base-href 'https://jdagmar.github.io/weather-app/'",
     "test": "ng test",
     "lint": "ng lint",
