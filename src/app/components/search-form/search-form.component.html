@@ -1,0 +1,19 @@
+<div class="search-form-container">
+  <form role="search" class="search-form">
+    <label>Find city</label>
+    <div class="form-group">
+      <input type="text" value="" #search_input />
+      <button (click)="getWeather(search_input.value)">Search</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="!noCityIsFound; else noCityFound">
+  <h2>{{ weather?.name }}</h2>
+  <p>{{ (weather?.weather)[0].description }}</p>
+  <p>{{ weather?.main.temp }}</p>
+</div>
+
+<ng-template #noCityFound>
+  <p>{{ noCityIsFound }}</p>
+</ng-template>
