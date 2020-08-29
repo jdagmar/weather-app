@@ -1,19 +1,33 @@
-<div class="search-form-container">
-  <form role="search" class="search-form">
+<div class="bg-primary">
+  <form
+    role="search"
+    class="search-form container"
+    [formGroup]="searchForm"
+    (ngSubmit)="getWeather(searchForm.get('city')?.value)"
+  >
     <label>Find city</label>
     <div class="form-group">
-      <input type="text" value="" #search_input />
-      <button (click)="getWeather(search_input.value)">Search</button>
+      <input type="text" formControlName="city" />
+      <button class="btn btn--white">
+        <span class="sr-only">Search</span>
+        <svg
+          class="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+      </button>
     </div>
   </form>
 </div>
 
-<div *ngIf="!noCityIsFound; else noCityFound">
-  <h2>{{ weather?.name }}</h2>
-  <p>{{ (weather?.weather || [])[0]?.description }}</p>
-  <p>{{ weather?.main?.temp }}</p>
-</div>
-
-<ng-template #noCityFound>
-  <p>{{ noCityIsFound }}</p>
-</ng-template>
+<app-result-card [result]="weather" [isResultNotFound]="noCityIsFound">
+</app-result-card>
