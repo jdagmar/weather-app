@@ -1,0 +1,11 @@
+<div class="container">
+  <div *ngIf="!isResultNotFound; else noCityFound">
+    <h2>{{ result?.name }}</h2>
+    <p>{{ (result?.weather || [])[0]?.description }}</p>
+    <p>{{ result?.main?.temp }}</p>
+  </div>
+
+  <ng-template #noCityFound>
+    <p>{{ isResultNotFound }}</p>
+  </ng-template>
+</div>
