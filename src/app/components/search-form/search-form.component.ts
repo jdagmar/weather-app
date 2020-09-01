@@ -19,6 +19,7 @@ export class SearchFormComponent implements OnInit {
   weather: Weather | undefined;
   noCityIsFound: boolean = false;
   city: string = 'stockholm';
+  isAfterSunset: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,7 +34,12 @@ export class SearchFormComponent implements OnInit {
     this.weatherService.getCurrentWeatherByCity(city).subscribe(
       (res) => {
         this.weather = res;
-        console.log(city);
+        console.log(res);
+
+        const sunset = res.sys.sunset;
+        const currentTime = Date.now() / 1000;
+
+        this.isAfterSunset = currentTime > sunset;
         this.noCityIsFound = false;
       },
       (error) => {

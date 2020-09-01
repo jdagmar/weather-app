@@ -12,6 +12,12 @@ export class ResultCardComponent implements OnInit {
 
   @Input() result!: Weather | undefined;
   @Input() isResultNotFound!: boolean;
+  @Input() isAfterSunset!: boolean;
 
-  ngOnInit(): void {}
+  iconCode: number | undefined = 0;
+
+  ngOnInit(): void {
+    this.iconCode = this.result?.weather[0].id;
+    console.log('code', (this.result?.weather || [])[0]?.id);
+  }
 }

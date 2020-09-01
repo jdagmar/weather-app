@@ -1,0 +1,13 @@
+.weather-card {
+  &__heading {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+
+  &__temp {
+    &:after {
+      content: "\00b0";
+      margin-left: 0.2rem;
+    }
+  }
+}

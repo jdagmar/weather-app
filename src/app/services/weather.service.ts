@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry, map } from 'rxjs/operators';
-import { throwError, Observable } from 'rxjs';
+import { throwError } from 'rxjs';
 import { openWeatherMap } from './../../environments/openWeatherMap.environment';
 
 export type Weather = {
   name: string;
   weather: {
     description: string;
+    id: number;
   }[];
   main: {
     temp: number;
     feels_like: number;
+  };
+  sys: {
+    sunset: number;
   };
 };
 
