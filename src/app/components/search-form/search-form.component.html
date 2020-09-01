@@ -5,10 +5,10 @@
     [formGroup]="searchForm"
     (ngSubmit)="getWeather(searchForm.get('city')?.value)"
   >
-    <label>Find city</label>
-    <div class="form-group">
-      <input type="text" formControlName="city" />
-      <button class="btn btn--white">
+    <label class="search-form__label">Find city</label>
+    <div class="search-form__input-group">
+      <input class="search-form__input" type="text" formControlName="city" />
+      <button class="btn btn--white btn--icon">
         <span class="sr-only">Search</span>
         <svg
           class="icon"
@@ -29,5 +29,9 @@
   </form>
 </div>
 
-<app-result-card [result]="weather" [isResultNotFound]="noCityIsFound">
+<app-result-card
+  [result]="weather"
+  [isResultNotFound]="noCityIsFound"
+  [isAfterSunset]="isAfterSunset"
+>
 </app-result-card>

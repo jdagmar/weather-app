@@ -1,8 +1,38 @@
 <div class="container">
-  <div *ngIf="!isResultNotFound; else noCityFound">
-    <h2>{{ result?.name }}</h2>
+  <div class="weather-card" *ngIf="!isResultNotFound; else noCityFound">
+    <div [ngSwitch]="iconCode">
+      <app-icon-thunderstorm
+        *ngSwitchCase="2"
+        [showMoon]="isAfterSunset"
+      ></app-icon-thunderstorm>
+      <app-icon-drizzle
+        *ngSwitchCase="3"
+        [showMoon]="isAfterSunset"
+      ></app-icon-drizzle>
+      <app-icon-rain
+        *ngSwitchCase="5"
+        [showMoon]="isAfterSunset"
+      ></app-icon-rain>
+      <app-icon-snow
+        *ngSwitchCase="6"
+        [showMoon]="isAfterSunset"
+      ></app-icon-snow>
+      <app-icon-atmosphere
+        *ngSwitchCase="7"
+        [showMoon]="isAfterSunset"
+      ></app-icon-atmosphere>
+      <app-icon-clouds
+        *ngSwitchDefault
+        [showMoon]="isAfterSunset"
+      ></app-icon-clouds>
+    </div>
+
+    <h2 class="weather-card__heading">{{ result?.name }}</h2>
     <p>{{ (result?.weather || [])[0]?.description }}</p>
-    <p>{{ result?.main?.temp }}</p>
+    <p class="weather-card__temp">
+      {{ result?.main?.temp }}
+    </p>
+    <!-- {{ (this.result?.weather)[0].id / 100 }} -->
   </div>
 
   <ng-template #noCityFound>
