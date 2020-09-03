@@ -1,12 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'round'
+  name: 'round',
 })
 export class RoundPipe implements PipeTransform {
-
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: number): number {
+    return Math.round(value);
   }
-
 }
