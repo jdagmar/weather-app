@@ -3,12 +3,10 @@
   --white: #ffffff;
   --bay-leaf: #7fa998;
   --outer-space: #2c3b35;
-  --lynch: #6c7698;
-  --lynch2: #51708a;
+  --lynch: #51708a;
 }
 
 body {
-  font-family: "Lato", sans-serif;
   font-size: 16px;
   margin: 0;
 }
@@ -16,7 +14,8 @@ body {
 h1,
 h2,
 h3,
-label {
+label,
+p {
   font-family: "Quicksand", sans-serif;
   color: var(--outer-space);
 }
@@ -58,4 +57,9 @@ input,
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.weather-icon {
+  width: 6rem;
+  height: 6rem;
 }

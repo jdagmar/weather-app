@@ -1,12 +1,21 @@
 .weather-card {
+  text-align: center;
+
   &__heading {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
   }
 
+  &__icon {
+    color: var(--lynch);
+  }
+
   &__temp {
+    color: var(--lynch);
+    font-size: 2.5rem;
+
     &:after {
-      content: "\00b0";
+      content: "\00b0 C";
       margin-left: 0.2rem;
     }
   }
