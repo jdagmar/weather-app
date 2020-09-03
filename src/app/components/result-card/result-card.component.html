@@ -1,6 +1,10 @@
 <div class="container">
-  <div class="weather-card" *ngIf="!isResultNotFound; else noCityFound">
-    <div [ngSwitch]="iconCode">
+  <div
+    class="weather-card"
+    *ngIf="result !== undefined && !isResultNotFound; else noCityFound"
+  >
+    <div class="weather-card__icon" [ngSwitch]="iconCode">
+      <h2 class="weather-card__heading">{{ result.name }}</h2>
       <app-icon-thunderstorm
         *ngSwitchCase="2"
         [showMoon]="isAfterSunset"
@@ -26,13 +30,10 @@
         [showMoon]="isAfterSunset"
       ></app-icon-clouds>
     </div>
-
-    <h2 class="weather-card__heading">{{ result?.name }}</h2>
-    <p>{{ (result?.weather || [])[0]?.description }}</p>
+    <p>{{ (result.weather || [])[0]?.description }}</p>
     <p class="weather-card__temp">
-      {{ result?.main?.temp }}
+      {{ result.main.temp | round }}
     </p>
-    <!-- {{ (this.result?.weather)[0].id / 100 }} -->
   </div>
 
   <ng-template #noCityFound>

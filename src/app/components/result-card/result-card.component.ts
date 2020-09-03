@@ -18,6 +18,5 @@ export class ResultCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.iconCode = this.result?.weather[0].id;
-    console.log('code', (this.result?.weather || [])[0]?.id);
   }
 }
