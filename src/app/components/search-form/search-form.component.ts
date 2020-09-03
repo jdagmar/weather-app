@@ -21,10 +21,7 @@ export class SearchFormComponent implements OnInit {
   city: string = 'stockholm';
   isAfterSunset: boolean = false;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private weatherService: WeatherService
-  ) {
+  constructor(private weatherService: WeatherService) {
     this.getWeather('stockholm');
   }
 
