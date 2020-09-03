@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { openWeatherMap } from './../../environments/openWeatherMap.environment';
+import { environment } from '../../environments/environment';
 
 export type Weather = {
   name: string;
@@ -23,7 +23,7 @@ export type Weather = {
   providedIn: 'root',
 })
 export class WeatherService {
-  apikey = openWeatherMap.openWeatherMap.apiKey;
+  apikey = environment.openWeatherMap.apiKey;
 
   constructor(private http: HttpClient) {}
 
