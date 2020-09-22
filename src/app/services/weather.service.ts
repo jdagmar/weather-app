@@ -15,6 +15,7 @@ export type Weather = {
     feels_like: number;
   };
   sys: {
+    sunrise: number;
     sunset: number;
   };
 };

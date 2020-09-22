@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService, Weather } from './../../services/weather.service';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl,
-} from '@angular/forms';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-search-form',
@@ -16,10 +11,10 @@ export class SearchFormComponent implements OnInit {
   searchForm: FormGroup = new FormGroup({
     city: new FormControl(),
   });
+
   weather: Weather | undefined;
   noCityIsFound: boolean = false;
   city: string = 'stockholm';
-  isAfterSunset: boolean = false;
 
   constructor(private weatherService: WeatherService) {
     this.getWeather('stockholm');
@@ -31,12 +26,6 @@ export class SearchFormComponent implements OnInit {
     this.weatherService.getCurrentWeatherByCity(city).subscribe(
       (res) => {
         this.weather = res;
-        console.log(res);
-
-        const sunset = res.sys.sunset;
-        const currentTime = Date.now() / 1000;
-
-        this.isAfterSunset = currentTime > sunset;
         this.noCityIsFound = false;
       },
       (error) => {

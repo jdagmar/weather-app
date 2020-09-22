@@ -15,6 +15,7 @@ import { IconSnowComponent } from './components/icons/icon-snow/icon-snow.compon
 import { IconAtmosphereComponent } from './components/icons/icon-atmosphere/icon-atmosphere.component';
 import { IconClearComponent } from './components/icons/icon-clear/icon-clear.component';
 import { IconCloudsComponent } from './components/icons/icon-clouds/icon-clouds.component';
+import { IconSearchComponent } from './components/icons/icon-search/icon-search.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { IconCloudsComponent } from './components/icons/icon-clouds/icon-clouds.
     IconAtmosphereComponent,
     IconClearComponent,
     IconCloudsComponent,
+    IconSearchComponent,
   ],
   imports: [BrowserModule, HttpClientModule, ReactiveFormsModule],
   providers: [],

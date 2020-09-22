@@ -31,6 +31,16 @@
       ></app-icon-clouds>
     </div>
     <p>{{ (result.weather || [])[0]?.description }}</p>
+    <dl>
+      <div class="weather-card__time">
+        <dt>sunset</dt>
+        <dd>{{ sunsetDate }}</dd>
+      </div>
+      <div class="weather-card__time">
+        <dt>sunrise</dt>
+        <dd>{{ sunriseDate }}</dd>
+      </div>
+    </dl>
     <p class="weather-card__temp">
       {{ result.main.temp | round }}
     </p>

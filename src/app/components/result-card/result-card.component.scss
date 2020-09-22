@@ -10,6 +10,23 @@
     color: var(--lynch);
   }
 
+  &__time {
+    font-size: 0.7rem;
+    font-family: "Lato";
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+
+    dt {
+      text-transform: uppercase;
+      margin-right: 0.5rem;
+    }
+
+    dd {
+      margin: 0;
+    }
+  }
+
   &__temp {
     color: var(--lynch);
     font-size: 2.5rem;
