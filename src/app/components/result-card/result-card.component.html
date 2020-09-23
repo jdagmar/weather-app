@@ -1,10 +1,7 @@
 <div class="container">
-  <div
-    class="weather-card"
-    *ngIf="result !== undefined && !isResultNotFound; else noCityFound"
-  >
+  <div class="weather-card">
     <div class="weather-card__icon" [ngSwitch]="iconCode">
-      <h2 class="weather-card__heading">{{ result.name }}</h2>
+      <h2 class="weather-card__heading">{{ result.city }}</h2>
       <app-icon-thunderstorm
         *ngSwitchCase="2"
         [showMoon]="isAfterSunset"
@@ -26,26 +23,29 @@
         [showMoon]="isAfterSunset"
       ></app-icon-atmosphere>
       <app-icon-clouds
-        *ngSwitchDefault
+        *ngSwitchCase="8"
         [showMoon]="isAfterSunset"
       ></app-icon-clouds>
+      <!-- TODO: add moon if showmoon -->
+      <app-icon-clear *ngSwitchDefault></app-icon-clear>
     </div>
-    <p>{{ (result.weather || [])[0]?.description }}</p>
+    <p>{{ result.description }}</p>
     <dl>
       <div class="weather-card__time">
         <dt>sunset</dt>
-        <dd>{{ sunsetDate }}</dd>
+        <dd>{{ result.sunriseAt | localShortTime }}</dd>
       </div>
       <div class="weather-card__time">
         <dt>sunrise</dt>
-        <dd>{{ sunriseDate }}</dd>
+        <dd>{{ result.sunsetAt | localShortTime }}</dd>
       </div>
     </dl>
     <p class="weather-card__temp">
-      {{ result.main.temp | round }}
+      {{ result.temp | round }}
     </p>
   </div>
 
+  <!-- TODO: move to seperate component -->
   <ng-template #noCityFound>
     <p>{{ isResultNotFound }}</p>
   </ng-template>
