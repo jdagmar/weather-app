@@ -16,5 +16,9 @@
   </form>
 </div>
 
-<app-result-card [result]="weather" [isResultNotFound]="noCityIsFound">
+<app-result-card
+  *ngIf="weather"
+  [result]="weather"
+  [isResultNotFound]="noCityIsFound"
+>
 </app-result-card>
