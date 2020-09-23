@@ -16,6 +16,7 @@ import { IconAtmosphereComponent } from './components/icons/icon-atmosphere/icon
 import { IconClearComponent } from './components/icons/icon-clear/icon-clear.component';
 import { IconCloudsComponent } from './components/icons/icon-clouds/icon-clouds.component';
 import { IconSearchComponent } from './components/icons/icon-search/icon-search.component';
+import { LocalShortTimePipe } from './pipes/local-short-time.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { IconSearchComponent } from './components/icons/icon-search/icon-search.
     IconClearComponent,
     IconCloudsComponent,
     IconSearchComponent,
+    LocalShortTimePipe,
   ],
   imports: [BrowserModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
