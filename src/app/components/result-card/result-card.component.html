@@ -1,33 +1,8 @@
 <div class="container">
   <div class="weather-card">
-    <div class="weather-card__icon" [ngSwitch]="iconCode">
-      <h2 class="weather-card__heading">{{ result.city }}</h2>
-      <app-icon-thunderstorm
-        *ngSwitchCase="2"
-        [showMoon]="isAfterSunset"
-      ></app-icon-thunderstorm>
-      <app-icon-drizzle
-        *ngSwitchCase="3"
-        [showMoon]="isAfterSunset"
-      ></app-icon-drizzle>
-      <app-icon-rain
-        *ngSwitchCase="5"
-        [showMoon]="isAfterSunset"
-      ></app-icon-rain>
-      <app-icon-snow
-        *ngSwitchCase="6"
-        [showMoon]="isAfterSunset"
-      ></app-icon-snow>
-      <app-icon-atmosphere
-        *ngSwitchCase="7"
-        [showMoon]="isAfterSunset"
-      ></app-icon-atmosphere>
-      <app-icon-clouds
-        *ngSwitchCase="8"
-        [showMoon]="isAfterSunset"
-      ></app-icon-clouds>
-      <!-- TODO: add moon if showmoon -->
-      <app-icon-clear *ngSwitchDefault></app-icon-clear>
+    <h2 class="weather-card__heading">{{ result.city }}</h2>
+    <div class="weather-card__icon">
+      <app-icon [name]="iconName" cssClass="weather-icon"></app-icon>
     </div>
     <p>{{ result.description }}</p>
     <dl>
