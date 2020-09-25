@@ -9,6 +9,7 @@ import { ResultCardComponent } from './components/result-card/result-card.compon
 import { RoundPipe } from './pipes/round.pipe';
 import { LocalShortTimePipe } from './pipes/local-short-time.pipe';
 import { IconComponent } from './components/icon/icon.component';
+import { NoResultCardComponent } from './components/no-result-card/no-result-card.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { IconComponent } from './components/icon/icon.component';
     RoundPipe,
     LocalShortTimePipe,
     IconComponent,
+    NoResultCardComponent,
   ],
   imports: [BrowserModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
