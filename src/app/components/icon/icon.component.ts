@@ -13,6 +13,6 @@ export class IconComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.href = `/../../assets/icons.svg#${this.name}`;
+    this.href = `/assets/icons.svg#${this.name}`;
   }
 }
