@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import iconsSvg from './icons.svg';
 
 @Component({
   selector: 'app-icon',
@@ -13,6 +14,7 @@ export class IconComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.href = `./assets/icons.svg#${this.name}`;
+    console.log(iconsSvg);
+    this.href = `${iconsSvg}#${this.name}`;
   }
 }
