@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, retry, map } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { concat, Observable, of, throwError } from 'rxjs';
+import { catchError, delay, map, retry } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 
 type WeatherResponse = {
@@ -30,6 +30,18 @@ export type Weather = {
   sunsetAt: Date;
 };
 
+export type RemoteWeather =
+  | {
+      tag: 'not asked';
+    }
+  | { tag: 'searching' }
+  | {
+      tag: 'success';
+      result: Weather;
+    }
+  | { tag: 'not found' }
+  | { tag: 'other error' };
+
 const toWeather = (res: WeatherResponse): Weather => {
   const firstWeather = res.weather[0] ?? {
     description: 'no description available',
@@ -55,17 +67,31 @@ export class WeatherService {
 
   constructor(private http: HttpClient) {}
 
-  getCurrentWeatherByCity(city: string) {
-    return this.http
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${this.apikey}&units=metric`
-      )
-      .pipe(
-        map((res) => res as WeatherResponse),
-        retry(3),
-        map(toWeather),
-        catchError(this.handleError)
-      );
+  getCurrentWeatherByCity(city: string): Observable<RemoteWeather> {
+    return concat(
+      of<RemoteWeather>({ tag: 'searching' }),
+      of<RemoteWeather>({ tag: 'searching' }).pipe(delay(2000)), // Dummy timeout to try out searching, remove later
+      this.http
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${this.apikey}&units=metric`
+        )
+        .pipe(
+          map(
+            (res): RemoteWeather => ({
+              tag: 'success',
+              result: toWeather(res as WeatherResponse),
+            })
+          ),
+          retry(3),
+          catchError((_error) => {
+            if (_error instanceof HttpErrorResponse && _error.status === 404) {
+              return of<RemoteWeather>({ tag: 'not found' });
+            } else {
+              return of<RemoteWeather>({ tag: 'other error' });
+            }
+          })
+        )
+    );
   }
 
   handleError(error: HttpErrorResponse | Error) {

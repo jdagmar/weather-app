@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherService, Weather } from './../../services/weather.service';
+import {
+  WeatherService,
+  Weather,
+  RemoteWeather,
+} from './../../services/weather.service';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
@@ -12,7 +16,7 @@ export class SearchFormComponent implements OnInit {
     city: new FormControl(),
   });
 
-  weather: Weather | undefined;
+  weather: RemoteWeather = { tag: 'not asked' };
   noCityIsFound: boolean = false;
   // TODO: save most recent searched city and use?
   city: string = 'stockholm';

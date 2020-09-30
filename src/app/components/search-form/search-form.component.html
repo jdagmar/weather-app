@@ -16,12 +16,25 @@
   </form>
 </div>
 
-<app-result-card [result]="weather"></app-result-card>
+<div [ngSwitch]="weather.tag">
+  <div *ngSwitchCase="'searching'">
+    <p>Searching</p>
+  </div>
 
-<!-- <div *ngIf="weather">
-  <app-result-card [result]="weather"></app-result-card>
+  <app-result-card
+    *ngSwitchCase="'success'"
+    [result]="$any(weather).result"
+  ></app-result-card>
+
+  <div *ngSwitchCase="'not found'">
+    <p>Not found</p>
+  </div>
+
+  <div *ngSwitchDefault>
+    <p>Other</p>
+  </div>
 </div>
 
-<template #noCity>
+<ng-template #noCity>
   <app-no-result-card></app-no-result-card>
-</template> -->
+</ng-template>
