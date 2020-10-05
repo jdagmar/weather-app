@@ -10,6 +10,8 @@ import { RoundPipe } from './pipes/round.pipe';
 import { LocalShortTimePipe } from './pipes/local-short-time.pipe';
 import { IconComponent } from './components/icon/icon.component';
 import { NoResultCardComponent } from './components/no-result-card/no-result-card.component';
+import { SearchCardComponent } from './components/search-card/search-card.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { NoResultCardComponent } from './components/no-result-card/no-result-car
     LocalShortTimePipe,
     IconComponent,
     NoResultCardComponent,
+    SearchCardComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
