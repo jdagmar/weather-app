@@ -8,5 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NoResultCardComponent implements OnInit {
   constructor() {}
 
+  @Input() city!: string;
+
   ngOnInit(): void {}
 }
