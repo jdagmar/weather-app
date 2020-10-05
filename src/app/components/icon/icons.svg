@@ -1,5 +1,10 @@
 <svg viewBox="0 0 64 64"
   xmlns="http://www.w3.org/2000/svg">
+  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" id="spinner">
+    <path fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10" d="M32 1C14.879 1 1 14.879 1 32s13.879 31 31 31m0-62c17.121 0 31 13.879 31 31a30.857 30.857 0 01-5.759 18l-5.62 5.621"/>
+    <path fill="none" stroke="#000" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="10" d="M51 45v11h11"/>
+  </svg>
+
   <symbol class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="search">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
   </symbol>

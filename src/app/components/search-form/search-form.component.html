@@ -16,25 +16,28 @@
   </form>
 </div>
 
-<div [ngSwitch]="weather.tag">
-  <div *ngSwitchCase="'searching'">
-    <p>Searching</p>
-  </div>
+<div class="container">
+  <div [ngSwitch]="weather.tag">
+    <div *ngSwitchCase="'searching'">
+      <app-search-card></app-search-card>
+    </div>
 
-  <app-result-card
-    *ngSwitchCase="'success'"
-    [result]="$any(weather).result"
-  ></app-result-card>
+    <app-result-card
+      *ngSwitchCase="'success'"
+      [result]="$any(weather).result"
+    ></app-result-card>
 
-  <div *ngSwitchCase="'not found'">
-    <p>Not found</p>
-  </div>
+    <div *ngSwitchCase="'not found'">
+      <app-no-result-card [city]="searchWord"></app-no-result-card>
+    </div>
 
-  <div *ngSwitchDefault>
-    <p>Other</p>
+    <div *ngSwitchDefault>
+      <p>Other</p>
+    </div>
   </div>
 </div>
 
+<!-- 
 <ng-template #noCity>
   <app-no-result-card></app-no-result-card>
-</ng-template>
+</ng-template> -->

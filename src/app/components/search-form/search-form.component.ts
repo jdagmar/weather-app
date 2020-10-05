@@ -20,6 +20,7 @@ export class SearchFormComponent implements OnInit {
   noCityIsFound: boolean = false;
   // TODO: save most recent searched city and use?
   city: string = 'stockholm';
+  searchWord: string = '';
 
   constructor(private weatherService: WeatherService) {
     this.getWeather('stockholm');
@@ -30,6 +31,7 @@ export class SearchFormComponent implements OnInit {
   getWeather(city: string) {
     this.weatherService.getCurrentWeatherByCity(city).subscribe(
       (res) => {
+        this.searchWord = this.searchForm.get('city')?.value;
         this.weather = res;
         this.noCityIsFound = false;
       },
