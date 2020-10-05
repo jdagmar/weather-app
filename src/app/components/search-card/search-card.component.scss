@@ -1,0 +1,12 @@
+.search-card {
+  text-align: center;
+
+  &__heading {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+
+  &__spinner {
+    margin-top: 3rem;
+  }
+}
