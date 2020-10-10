@@ -18,26 +18,18 @@
 
 <div class="container">
   <div [ngSwitch]="weather.tag">
-    <div *ngSwitchCase="'searching'">
-      <app-search-card></app-search-card>
-    </div>
+    <app-search-card *ngSwitchCase="'searching'"></app-search-card>
 
     <app-result-card
       *ngSwitchCase="'success'"
       [result]="$any(weather).result"
     ></app-result-card>
 
-    <div *ngSwitchCase="'not found'">
-      <app-no-result-card [city]="searchWord"></app-no-result-card>
-    </div>
+    <app-no-result-card
+      *ngSwitchCase="'not found'"
+      [city]="searchWord"
+    ></app-no-result-card>
 
-    <div *ngSwitchDefault>
-      <p>Other</p>
-    </div>
+    <app-other-error-card *ngSwitchDefault></app-other-error-card>
   </div>
 </div>
-
-<!-- 
-<ng-template #noCity>
-  <app-no-result-card></app-no-result-card>
-</ng-template> -->
