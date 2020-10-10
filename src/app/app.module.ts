@@ -12,6 +12,7 @@ import { IconComponent } from './components/icon/icon.component';
 import { NoResultCardComponent } from './components/no-result-card/no-result-card.component';
 import { SearchCardComponent } from './components/search-card/search-card.component';
 import { HeaderComponent } from './components/header/header.component';
+import { OtherErrorCardComponent } from './components/other-error-card/other-error-card.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HeaderComponent } from './components/header/header.component';
     NoResultCardComponent,
     SearchCardComponent,
     HeaderComponent,
+    OtherErrorCardComponent,
   ],
   imports: [BrowserModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
