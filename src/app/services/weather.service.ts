@@ -94,17 +94,17 @@ export class WeatherService {
     );
   }
 
-  handleError(error: HttpErrorResponse | Error) {
-    if (error instanceof HttpErrorResponse) {
-      if (error.error instanceof Error) {
-        return throwError(error.error.message);
-      } else {
-        return throwError(error.status + ': ' + error.message);
-      }
-    } else if (error instanceof Error) {
-      return throwError(error.message);
-    } else {
-      return throwError('something bad happend');
-    }
-  }
+  // handleError(error: HttpErrorResponse | Error) {
+  //   if (error instanceof HttpErrorResponse) {
+  //     if (error.error instanceof Error) {
+  //       return throwError(error.error.message);
+  //     } else {
+  //       return throwError(error.status + ': ' + error.message);
+  //     }
+  //   } else if (error instanceof Error) {
+  //     return throwError(error.message);
+  //   } else {
+  //     return throwError('something bad happend');
+  //   }
+  // }
 }
