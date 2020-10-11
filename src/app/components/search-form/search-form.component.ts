@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
   WeatherService,
-  Weather,
   RemoteWeather,
 } from './../../services/weather.service';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
@@ -17,29 +16,29 @@ export class SearchFormComponent implements OnInit {
   });
 
   weather: RemoteWeather = { tag: 'not asked' };
-  noCityIsFound: boolean = false;
-  // TODO: save most recent searched city and use?
-  city: string = 'stockholm';
   searchWord: string = '';
+  suggestedCities = ['stockholm', 'new york', 'london', 'tokyo'];
 
   constructor(private weatherService: WeatherService) {
-    this.getWeather('stockholm');
+    const city = localStorage.getItem('city');
+
+    if (city !== null) {
+      this.getWeather(city);
+    }
   }
 
   ngOnInit() {}
 
   getWeather(city: string) {
-    this.weatherService.getCurrentWeatherByCity(city).subscribe(
-      (res) => {
+    if (city.length > 0) {
+      this.weatherService.getCurrentWeatherByCity(city).subscribe((res) => {
         this.searchWord = this.searchForm.get('city')?.value;
         this.weather = res;
-        this.noCityIsFound = false;
-      },
-      (error) => {
-        console.log(error);
-        // TODO: save and handle error
-        return (this.noCityIsFound = true);
-      }
-    );
+
+        if (this.weather.tag === 'success') {
+          localStorage.setItem('city', city);
+        }
+      });
+    }
   }
 }

@@ -5,12 +5,12 @@
     [formGroup]="searchForm"
     (ngSubmit)="getWeather(searchForm.get('city')?.value)"
   >
-    <label class="search-form__label">Search for city</label>
+    <label class="search-form__label">Search city</label>
     <div class="search-form__input-group">
       <input class="search-form__input" type="text" formControlName="city" />
       <button class="btn btn--white btn--icon">
         <span class="sr-only">Search</span>
-        <app-icon name="search"></app-icon>
+        <app-icon [name]="'search'"></app-icon>
       </button>
     </div>
   </form>
@@ -18,7 +18,23 @@
 
 <div class="container">
   <div [ngSwitch]="weather.tag">
-    <app-search-card *ngSwitchCase="'searching'"></app-search-card>
+    <div *ngSwitchCase="'not asked'" class="suggested-cities">
+      <p>Suggested cities</p>
+      <ul class="suggested-cities__list">
+        <li *ngFor="let city of suggestedCities">
+          <button (click)="getWeather(city)" class="suggested-cities__btn">
+            {{ city | titlecase }}
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngSwitchCase="'searching'" class="search-card">
+      <h2>Searching</h2>
+      <div class="search-card__spinner">
+        <app-icon [name]="'spinner'" cssClass="spinner"></app-icon>
+      </div>
+    </div>
 
     <app-result-card
       *ngSwitchCase="'success'"
@@ -30,6 +46,11 @@
       [city]="searchWord"
     ></app-no-result-card>
 
-    <app-other-error-card *ngSwitchDefault></app-other-error-card>
+    <div *ngSwitchDefault>
+      <h2>Something went wrong</h2>
+      <p class="help-text">
+        App can't search for weather at the moment, try again later.
+      </p>
+    </div>
   </div>
 </div>
