@@ -10,9 +10,8 @@ import { RoundPipe } from './pipes/round.pipe';
 import { LocalShortTimePipe } from './pipes/local-short-time.pipe';
 import { IconComponent } from './components/icon/icon.component';
 import { NoResultCardComponent } from './components/no-result-card/no-result-card.component';
-import { SearchCardComponent } from './components/search-card/search-card.component';
 import { HeaderComponent } from './components/header/header.component';
-import { OtherErrorCardComponent } from './components/other-error-card/other-error-card.component';
+import { SentencesCasePipe } from './pipes/sentences-case.pipe';
 
 @NgModule({
   declarations: [
@@ -23,9 +22,8 @@ import { OtherErrorCardComponent } from './components/other-error-card/other-err
     LocalShortTimePipe,
     IconComponent,
     NoResultCardComponent,
-    SearchCardComponent,
     HeaderComponent,
-    OtherErrorCardComponent,
+    SentencesCasePipe,
   ],
   imports: [BrowserModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
