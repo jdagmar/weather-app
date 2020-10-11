@@ -3,7 +3,7 @@
   <div class="weather-card__icon">
     <app-icon [name]="iconName" cssClass="weather-icon"></app-icon>
   </div>
-  <p>{{ result.description }}</p>
+  <p>{{ result.description | sentencesCase }}</p>
   <dl>
     <div class="weather-card__time">
       <dt>sunset</dt>

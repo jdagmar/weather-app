@@ -14,3 +14,29 @@
     font-size: 1rem;
   }
 }
+
+.suggested-cities {
+  $self: &;
+
+  &__list {
+    list-style: none;
+    padding-left: 0;
+
+    #{ $self }__btn {
+      background-color: transparent;
+      padding: 0;
+      margin-bottom: 0.5rem;
+      border: none;
+      color: var(--lynch);
+      font-size: 1rem;
+
+      &:hover {
+        color: var(--red-damask);
+      }
+    }
+  }
+}
+
+.search-card {
+  text-align: center;
+}
