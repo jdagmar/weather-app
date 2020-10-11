@@ -1,81 +1,84 @@
-<svg viewBox="0 0 64 64"
-  xmlns="http://www.w3.org/2000/svg">
-  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" id="spinner">
-    <path fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10" d="M32 1C14.879 1 1 14.879 1 32s13.879 31 31 31m0-62c17.121 0 31 13.879 31 31a30.857 30.857 0 01-5.759 18l-5.62 5.621"/>
-    <path fill="none" stroke="#000" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="10" d="M51 45v11h11"/>
-  </svg>
-
-  <symbol class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="search">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="spinner">
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M32 1C14.879 1 1 14.879 1 32s13.879 31 31 31m0-62c17.121 0 31 13.879 31 31a30.857 30.857 0 01-5.759 18l-5.62 5.621"/>
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="10" d="M51 45v11h11"/>
   </symbol>
 
-  <symbol width="64" height="64" id="atmosphere-sun">
+  <symbol id="search">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10">
+      <circle cx="21" cy="21" r="20"/>
+      <path d="M35 35l6 6"/>
+      <path d="M63 57l-5.999 6-19-19 6-6z" stroke-width="1.99998"/>
+    </g>
+  </symbol>
+
+  <symbol id="atmosphere-sun">
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M56 45c4.19 0 7-2.81 7-7 0-4.189-2.81-9-7-9 0-10.475-9.525-18-20-18-9.271 0-17.348 6.211-19 15h-2c-5.238 0-9 4.762-9 10s3.762 9 9 9" />
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M29.999 11.752A12.945 12.945 0 0022 9C14.82 9 9 14.82 9 22c0 2.577.707 3.979 2 6M6 22H0M22 6V0M10 10L4 4M17 45h37M17 51h37M17 57h37" />
   </symbol>
 
-  <symbol width="64" height="64" id="atmosphere-moon">
+  <symbol id="atmosphere-moon">
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M56 45c4.19 0 7-2.81 7-7 0-4.189-2.81-9-7-9 0-10.475-9.525-18-20-18-9.271 0-17.348 6.211-19 15h-2c-5.238 0-9 4.762-9 10s3.762 9 9 9" />
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M24.957 15.001C22.646 11.392 18.604 9 14 9c-.826 0-1.631.085-2.414.233A8.945 8.945 0 0113 14.063a9 9 0 01-9 9 8.97 8.97 0 01-2.98-.516 12.936 12.936 0 002.023 6.452 13.068 13.068 0 003.961 3.96M17 45h37M17 51h37M17 57h37" />
   </symbol>
 
-  <symbol width="64" height="64" id="clear-sun">
+  <symbol id="clear-sun">
     <g fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10">
       <circle cx="32" cy="32" r="16" />
       <path d="M32 10V0M32 64V54M54 32h10M0 32h10M48 16l5-5M11 53l5-5M48 48l5 5M11 11l5 5" />
     </g>
   </symbol>
 
-  <symbol width="64" height="64" id="clear-moon">
+  <symbol id="clear-moon">
     <path fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10" d="M6 52c14.359 0 26-11.641 26-26 0-9.994-6.729-18.648-15-23 3.396-1.277 8.158-2 12-2 17.121 0 31 13.879 31 31S46.121 63 29 63c-9.505 0-18.313-4.265-24-11 .23.006.768 0 1 0z"/>
   </symbol>
 
-  <symbol width="64" height="64" class="weather-icon" id="clouds-sun">
+  <symbol id="clouds-sun">
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M56 50c4.19 0 7-2.81 7-7 0-4.189-2.81-9-7-9 0-10.475-9.525-18-20-18-9.271 0-17.348 6.211-19 15h-2c-5.238 0-9 4.762-9 10s3.762 9 9 9h41z" />
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M29.999 16.752A12.945 12.945 0 0022 14c-7.18 0-13 5.82-13 13 0 2.577.707 3.979 2 6M6 27H0M22 11V5M10 15L4 9" />
   </symbol>
 
-  <symbol width="64" height="64" class="weather-icon" id="clouds-moon">
+  <symbol id="clouds-moon">
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M56 50c4.19 0 7-2.81 7-7 0-4.189-2.81-9-7-9 0-10.475-9.525-18-20-18-9.271 0-17.348 6.211-19 15h-2c-5.238 0-9 4.762-9 10s3.762 9 9 9h41z" />
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M24.957 20.001C22.646 16.392 18.604 14 14 14c-.826 0-1.631.085-2.414.233A8.945 8.945 0 0113 19.063a9 9 0 01-9 9 8.97 8.97 0 01-2.98-.516 12.936 12.936 0 002.023 6.452 13.068 13.068 0 003.961 3.96" />
   </symbol>
 
-  <symbol width="64" height="64" id="drizzle-sun">
+  <symbol id="drizzle-sun">
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M56 45c4.19 0 7-2.81 7-7 0-4.189-2.81-9-7-9 0-10.475-9.525-18-20-18-9.271 0-17.348 6.211-19 15h-2c-5.238 0-9 4.762-9 10s3.762 9 9 9h41z" />
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M29.999 11.752A12.945 12.945 0 0022 9C14.82 9 9 14.82 9 22c0 2.577.707 3.979 2 6M6 22H0M22 6V0M10 10L4 4M15 60l-1 2M25 60l-1 2M35 60l-1 2M45 60l-1 2M19 48l-1 2M29 48l-1 2M39 48l-1 2M49 48l-1 2M11 54l-1 2M21 54l-1 2M31 54l-1 2M41 54l-1 2" />
   </symbol>
 
-  <symbol width="64" height="64" id="drizzle-moon">
+  <symbol id="drizzle-moon">
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M56 45c4.19 0 7-2.81 7-7 0-4.189-2.81-9-7-9 0-10.475-9.525-18-20-18-9.271 0-17.348 6.211-19 15h-2c-5.238 0-9 4.762-9 10s3.762 9 9 9h41z" />
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M24.957 15.001C22.646 11.392 18.604 9 14 9c-.826 0-1.631.085-2.414.233A8.945 8.945 0 0113 14.063a9 9 0 01-9 9 8.97 8.97 0 01-2.98-.516 12.936 12.936 0 002.023 6.452 13.068 13.068 0 003.961 3.96M15 60l-1 2M25 60l-1 2M35 60l-1 2M45 60l-1 2M19 48l-1 2M29 48l-1 2M39 48l-1 2M49 48l-1 2M11 54l-1 2M21 54l-1 2M31 54l-1 2M41 54l-1 2" />
   </symbol>
 
-  <symbol width="64" height="64" id="rain-sun">
+  <symbol id="rain-sun">
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M56 45c4.19 0 7-2.81 7-7 0-4.189-2.81-9-7-9 0-10.475-9.525-18-20-18-9.271 0-17.348 6.211-19 15h-2c-5.238 0-9 4.762-9 10s3.762 9 9 9h41z" />
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M29.999 11.752A12.945 12.945 0 0022 9C14.82 9 9 14.82 9 22c0 2.577.707 3.979 2 6M6 22H0M22 6V0M10 10L4 4M20 48v14M30 48v14M40 48v14M50 48v14" />
   </symbol>
 
-  <symbol width="64" height="64" id="rain-moon">
+  <symbol id="rain-moon">
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M56 45c4.19 0 7-2.81 7-7 0-4.189-2.81-9-7-9 0-10.475-9.525-18-20-18-9.271 0-17.348 6.211-19 15h-2c-5.238 0-9 4.762-9 10s3.762 9 9 9h41z" />
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M24.957 15.001C22.646 11.392 18.604 9 14 9c-.826 0-1.631.085-2.414.233A8.945 8.945 0 0113 14.063a9 9 0 01-9 9 8.97 8.97 0 01-2.98-.516 12.936 12.936 0 002.023 6.452 13.068 13.068 0 003.961 3.96M20 48v14M30 48v14M40 48v14M50 48v14" />
   </symbol>
 
-  <symbol width="64" height="64" id="snow-sun">
+  <symbol id="snow-sun">
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M56 45c4.19 0 7-2.81 7-7 0-4.189-2.81-9-7-9 0-10.475-9.525-18-20-18-9.271 0-17.348 6.211-19 15h-2c-5.238 0-9 4.762-9 10s3.762 9 9 9h41z" />
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M29.999 11.752A12.945 12.945 0 0022 9C14.82 9 9 14.82 9 22c0 2.577.707 3.979 2 6M6 22H0M22 6V0M10 10L4 4M24 48v4M24 56v4M28 50l-2 2M22 56l-2 2M28 58l-2-2M22 52l-2-2M30 54h-4M22 54h-4M44 50v4M44 58v4M48 52l-2 2M42 58l-2 2M48 60l-2-2M42 54l-2-2M50 56h-4M42 56h-4" />
   </symbol>
 
-  <symbol width="64" height="64" id="snow-moon">
+  <symbol id="snow-moon">
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M56 45c4.19 0 7-2.81 7-7 0-4.189-2.81-9-7-9 0-10.475-9.525-18-20-18-9.271 0-17.348 6.211-19 15h-2c-5.238 0-9 4.762-9 10s3.762 9 9 9h41z" />
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M24.957 15.001C22.646 11.392 18.604 9 14 9c-.826 0-1.631.085-2.414.233A8.945 8.945 0 0113 14.063a9 9 0 01-9 9 8.97 8.97 0 01-2.98-.516 12.936 12.936 0 002.023 6.452 13.068 13.068 0 003.961 3.96M24 48v4M24 56v4M28 50l-2 2M22 56l-2 2M28 58l-2-2M22 52l-2-2M30 54h-4M22 54h-4M44 50v4M44 58v4M48 52l-2 2M42 58l-2 2M48 60l-2-2M42 54l-2-2M50 56h-4M42 56h-4" />
   </symbol>
 
-  <symbol width="64" height="64" id="thunderstorm-sun">
+  <symbol id="thunderstorm-sun">
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M56 45c4.19 0 7-2.81 7-7 0-4.189-2.81-9-7-9 0-10.475-9.525-18-20-18-9.271 0-17.348 6.211-19 15h-2c-5.238 0-9 4.762-9 10s3.762 9 9 9h41z" />
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M29.999 11.752A12.945 12.945 0 0022 9C14.82 9 9 14.82 9 22c0 2.577.707 3.979 2 6M6 22H0M22 6V0M10 10L4 4M32 48l-3 7h5l-4 7M42 48l-3 7h5l-4 7M22 48l-3 7h5l-4 7" />
   </symbol>
 
-  <symbol width="64" height="64" id="thunderstorm-moon">
+  <symbol id="thunderstorm-moon">
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M56 45c4.19 0 7-2.81 7-7 0-4.189-2.81-9-7-9 0-10.475-9.525-18-20-18-9.271 0-17.348 6.211-19 15h-2c-5.238 0-9 4.762-9 10s3.762 9 9 9h41z" />
     <path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" d="M24.957 15.001C22.646 11.392 18.604 9 14 9c-.826 0-1.631.085-2.414.233A8.945 8.945 0 0113 14.063a9 9 0 01-9 9 8.97 8.97 0 01-2.98-.516 12.936 12.936 0 002.023 6.452 13.068 13.068 0 003.961 3.96M32 48l-3 7h5l-4 7M42 48l-3 7h5l-4 7M22 48l-3 7h5l-4 7" />
   </symbol>

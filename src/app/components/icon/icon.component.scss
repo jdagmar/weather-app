@@ -1,5 +1,6 @@
 .spinner {
-  margin: auto;
+  text-align: center;
+  margin-top: 3rem;
   width: 4rem;
   height: 4rem;
   color: var(--lynch);
@@ -30,4 +31,9 @@
 .weather-icon {
   width: 6rem;
   height: 6rem;
+}
+
+.icon-small {
+  width: 2rem;
+  height: 2rem;
 }
