@@ -1,13 +1,22 @@
 .search-form {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+
   &__input-group {
     display: flex;
     background-color: var(--white);
+
+    .btn {
+      color: var(--outer-space);
+    }
   }
 
   &__label {
     display: block;
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    font-weight: 700;
   }
 
   &__input {
@@ -20,20 +29,28 @@
 .suggested-cities {
   $self: &;
 
+  &__heading {
+    font-size: 1.2rem;
+  }
+
   &__list {
     list-style: none;
     padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
 
     #{ $self }__btn {
-      background-color: transparent;
-      padding: 0;
-      margin-bottom: 0.5rem;
+      background-color: var(--red-damask);
+      padding: 0.5rem 1rem;
+      border-radius: 0.15rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
       border: none;
-      color: var(--lynch);
-      font-size: 1rem;
+      color: var(--white);
+      font-size: 1.2rem;
 
       &:hover {
-        color: var(--red-damask);
+        background-color: #e6934d;
       }
     }
   }

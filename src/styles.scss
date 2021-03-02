@@ -1,7 +1,7 @@
 :root {
   --body-bg: #d8d8d8;
   --white: #ffffff;
-  --bay-leaf: #7fa998;
+  --blumine: #16697a;
   --outer-space: #2c3b35;
   --lynch: #51708a;
   --red-damask: #dc694e;
@@ -10,20 +10,17 @@
 body {
   font-size: 16px;
   margin: 0;
+  letter-spacing: 1px;
 }
 
 h1,
 h2,
 h3,
 label,
-p {
+p,
+input {
   font-family: "Quicksand", sans-serif;
   color: var(--outer-space);
-}
-
-h2 {
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
 }
 
 h2,
@@ -55,7 +52,7 @@ input,
 }
 
 .bg-primary {
-  background-color: var(--bay-leaf);
+  background-color: var(--blumine);
 }
 
 .sr-only {

@@ -19,7 +19,7 @@
 <div class="container">
   <div [ngSwitch]="weather.tag">
     <div *ngSwitchCase="'not asked'" class="suggested-cities">
-      <p>Suggested cities</p>
+      <p class="suggested-cities__heading">Suggested cities</p>
       <ul class="suggested-cities__list">
         <li *ngFor="let city of suggestedCities">
           <button (click)="getWeather(city)" class="suggested-cities__btn">

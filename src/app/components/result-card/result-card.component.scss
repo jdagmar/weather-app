@@ -1,8 +1,13 @@
 .weather-card {
   text-align: center;
 
+  &__heading {
+    font-size: 1.8rem;
+  }
+
   &__icon {
     color: var(--lynch);
+    padding: 1rem 0;
   }
 
   &__time {
@@ -25,6 +30,7 @@
   &__temp {
     color: var(--lynch);
     font-size: 2.5rem;
+    font-weight: 700;
 
     &:after {
       content: "\00b0 C";
