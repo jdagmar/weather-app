@@ -1,6 +1,6 @@
 export const environment = {
-  production: true,
-  openWeatherMap: {
-    apiKey: undefined,
-  },
+   production: true,
+   openWeatherMap : {
+        apiKey: 'undefined'
+    },
 };

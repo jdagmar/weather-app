@@ -40,7 +40,7 @@
     flex-wrap: wrap;
 
     #{ $self }__btn {
-      background-color: var(--red-damask);
+      background-color: var(--lynch);
       padding: 0.5rem 1rem;
       border-radius: 0.15rem;
       margin-right: 1rem;
@@ -50,7 +50,7 @@
       font-size: 1.2rem;
 
       &:hover {
-        background-color: #e6934d;
+        background-color: #49657c;
       }
     }
   }

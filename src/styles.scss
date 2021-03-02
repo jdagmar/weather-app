@@ -1,10 +1,9 @@
 :root {
   --body-bg: #d8d8d8;
   --white: #ffffff;
-  --blumine: #16697a;
+  --purple-rain: #625261;
   --outer-space: #2c3b35;
   --lynch: #51708a;
-  --red-damask: #dc694e;
 }
 
 body {
@@ -52,7 +51,7 @@ input,
 }
 
 .bg-primary {
-  background-color: var(--blumine);
+  background-color: var(--purple-rain);
 }
 
 .sr-only {
